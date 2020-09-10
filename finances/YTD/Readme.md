@@ -18,3 +18,11 @@ given:
 
     calculate: needed addition (Contribution) to get to goal in remaining weeks.
     Assuming goal is Year End, so week = 52
+
+#   Running
+# Build docker, then run it:
+docker build -t foobar .
+docker run -it foobar 
+
+#   Just run it:
+docker run -it --rm --name foobar1 -v $PWD:/foob  python python /foob/bin/calc_401k_contrib.py

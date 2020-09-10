@@ -34,13 +34,13 @@ def calc_contrib(myweek=1,myvalue=0,mygoal=0):
     ## DEBUG print(time_left,"weeks left")
 
     my_contribution = int(( mygoal - myvalue )  / time_left)
-    print("Contribute: ", my_contribution, "to reach", mygoal, " in",time_left,"weeks")
+    print("starting with:",myvalue,"Contribute: ", my_contribution, "to reach", mygoal, " in",time_left,"weeks")
 
 def main():
     thisWeek = calc_week()
     ## DEBUG print("Calculated its week:",thisWeek)
     calc_contrib(thisWeek,10300,26000)
-    calc_contrib(37,10300,26000)
+    calc_contrib(1,0,26000)
 
 
 if __name__ == "__main__":
