@@ -10,28 +10,36 @@ Future work:
     also, some contrib's are percent based, would be nice to calc that. That would
     require another param: income
 '''
+
+
 def calc_week(now=0):
+    from datetime import date
     '''
     function to calculate the current week, given (the current time? date?)
     '''
-    return(1)   # For now, its always the first week
+    weekNumber = date.today().isocalendar()[1]
+    ## DEBUG print("This is week:", weekNumber)
+
+    return(weekNumber)   # For now, its always the first week
 
 def calc_contrib(myweek=1,myvalue=0,mygoal=0):
-    print("calc'ing contribution")
+    ## DEBUG print("calc'ing contribution")
+
+    # Defaults
     my_contribution = 0
     my_contribution = mygoal
     end_week = 52   #   default to Year End
+
     time_left = end_week - myweek
-    print(time_left,"weeks left")
+    ## DEBUG print(time_left,"weeks left")
 
-
-    my_contribution = ( mygoal - myvalue )  / time_left
+    my_contribution = int(( mygoal - myvalue )  / time_left)
     print("Contribute: ", my_contribution, "to reach", mygoal, " in",time_left,"weeks")
 
 def main():
-    foob=42
-    foob = calc_week()
-    print("This is weeek:",foob)
+    thisWeek = calc_week()
+    ## DEBUG print("Calculated its week:",thisWeek)
+    calc_contrib(thisWeek,10300,26000)
     calc_contrib(37,10300,26000)
 
 
