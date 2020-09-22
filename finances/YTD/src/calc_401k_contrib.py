@@ -37,11 +37,17 @@ def calc_contrib(myweek=1,myvalue=0,mygoal=0):
     print("starting with:",myvalue,"Contribute: ", my_contribution, "to reach", mygoal, " in",time_left,"weeks")
 
 def main():
+    '''
+    run the functions to calc needed contribution.
+    For now the variables are hard coded
+    TODO: make them params
+    '''
     thisWeek = calc_week()
     ## DEBUG print("Calculated its week:",thisWeek)
-    calc_contrib(thisWeek,10300,26000)
-    calc_contrib(1,0,26000)
-
+    ##calc_contrib(thisWeek,10300,26000)
+    ##calc_contrib(1,0,26000)
+    #   Lisa, 2020-09-04
+    calc_contrib(38,17624,26000)
 
 if __name__ == "__main__":
     main()
